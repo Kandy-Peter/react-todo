@@ -1,3 +1,6 @@
+import React from 'react';
+import img from './delete.png';
+
 function Todo({id, todoText, completed, deleteTodo, toggleTodoCompletion, editTodo}) {
 
 	function handleDelete(e) {
@@ -13,14 +16,7 @@ function Todo({id, todoText, completed, deleteTodo, toggleTodoCompletion, editTo
 	}
 
 	return (
-		<li 
-		style={{
-			width: '350px',
-			margin: '0 0 10px 0',
-			display: 'flex',
-			justifyContent: 'space-between'
-		}}
-		>
+		<li>
 		<form 
 			onSubmit={
 			e => {
@@ -43,8 +39,8 @@ function Todo({id, todoText, completed, deleteTodo, toggleTodoCompletion, editTo
 			onChange={handleEdit}
 			/>
 		</form>
-		<p onClick={handleToggle}>{completed ? 'completed' : 'incomplete'}</p>
-		<button onClick={handleDelete}>X</button>
+		<p onClick={handleToggle}>{completed ? `<img src="check.png" alt="checked" />` : '<img src="unchecked.png" alt="not-checked">'}</p>
+		<img onClick={handleDelete} src={img} alt="delete" />
 		</li>
 	);
 }
