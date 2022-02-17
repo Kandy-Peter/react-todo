@@ -1,0 +1,155 @@
+$primary-color: #93A9D1;
+  
+body, html {
+  height: 100%;
+}
+
+body {
+  background: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'cwTeXHei';
+}
+
+
+
+.todoApp {
+  width: 400px;
+  background: #fff;
+  border: 1px solid #ccc;
+  transition: all .5s;
+  box-shadow: 0px 10px 11px 0px rgba(64, 64, 64, .2);
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 8px 0 -3px #f6f6f6, 0 9px 1px -3px rgba(0, 0, 0, 0.2), 0 16px 0 -6px #f6f6f6, 0 17px 2px -6px rgba(0, 0, 0, 0.2);
+  }
+  
+  h2 {
+    color: $primary-color;
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    letter-spacing: 3px;
+    margin: 15px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    outline: none;
+    padding: 10px 15px;
+    box-sizing: border-box;
+  }
+  
+  &__toolbar {
+    position: relative;
+    &__filter {
+      color: #ccc;
+      font-size: 16px;
+      padding: 10px;
+      font-family: 'Roboto', sans-serif;
+      
+      span {
+        margin-left: 5px;
+        cursor: pointer;
+        padding: 2px;
+        box-sizing: border-box;
+        text-transform: capitalize;
+        
+        &:hover, &.active {
+          border: 1px solid #ccc;
+        }
+      }
+    }
+    
+    &-clear {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      z-index: 5;
+      color: #111;
+      font-size: 18px;
+      font-family: "roboto";
+      cursor: pointer;
+    }
+  }
+  
+  &__list {
+    font-family: 'Roboto', sans-serif;
+    color: #111;
+    
+    li {
+      padding: 10px 15px;
+      font-size: 25px;
+      animation-duration: .3s;
+      
+      i {
+        cursor: pointer;
+      }
+      
+      input[type="checkbox"] {
+        display: block;
+      }
+  
+      input[type="checkbox"] ~ i.fa.fa-square-o{
+          color: #c8c8c8;    
+          display: inline;
+      }
+      input[type="checkbox"] ~ i.fa.fa-check-square-o,
+      input[type="checkbox"]:checked ~ i.fa.fa-square-o{
+          display: none;
+      }
+      input[type="checkbox"]:checked ~ i.fa.fa-check-square-o{
+          color: $primary-color;
+          display: inline;
+      }
+      
+      input[type="text"]{
+        width: calc(100% - 50px);
+        font-size: 25px;
+      }
+      
+      span {
+        margin-left: 10px;
+        &.complete {
+          color: #ccc;
+          text-decoration: line-through;
+        }
+      }
+      
+      .delete {
+        display: none;
+        float: right;
+        color: #dd4124;
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 25px;
+        font-weight: bold;
+      }
+      
+      &:hover {
+        input[type="checkbox"] ~ i.fa {
+          color: $primary-color;
+        }
+        
+        .delete {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
