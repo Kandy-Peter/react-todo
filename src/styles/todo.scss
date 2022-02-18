@@ -1,59 +1,67 @@
 .todolist {
-  margin: 2rem auto;
+  margin: 4rem auto;
   width: 80%;
-
-  img {
-    width: 30px;
-    height: 30px;
-
-    &:last-child {
-      width: 23px;
-      height: 23px;
-    }
-  }
-
-  input {
-    border: none;
-    outline: none;
-    background-color: transparent;
-  }
-
-  .inputText {
-    width: 650px;
-    height: 65px;
-    padding: 0 30px;
-    border-bottom: 4px solid #2f2e41;
-
-    &::placeholder {
-      font-size: 26px;
-      color: #acacb3;
-    }
-  }
-
-  ul {
-    margin-top: 4rem;
-    width: 700px;
+  background: url(../images/background.svg) no-repeat;
+  background-position: right;
+  background-size: contain;
+  
+  .container {
+    background-color: #e2e2e21a;
+    box-shadow: 1px 2px 35px #eee;
+    backdrop-filter: blur(3px);
+    width: fit-content;
+    padding: 3rem;
+    border-radius: 15px;
+    min-height: 300px;
+    margin-top: 3rem;
     
-    .todo-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      height: 70px;
-      border-bottom: 1px solid #6e6e77;
+    img {
+      width: 30px;
+      height: 30px;
+
+      &:last-child {
+        width: 23px;
+        height: 23px;
+      }
+    }
+
+    .inputText {
+      width: 650px;
+      height: 65px;
+      padding: 0 30px;
+      border-bottom: 4px solid #2f2e41;
+
+      &::placeholder {
+        font-size: 26px;
+        color: #acacb3;
+      }
+    }
+
+    ul {
+      margin-top: 4rem;
+      width: 700px;
       
-      form {
-        flex: 1;
+      .todo-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        border-bottom: 1px solid #6e6e77;
+        
+        form {
+          flex: 1;
 
-        .todoText {
-          font-size: 24px;
-          color: #2f2e41;
-          text-align: start;
-          padding: 10px 2rem;
-          width: 100%;
+          .todoText {
+            font-size: 24px;
+            color: #2f2e41;
+            text-align: start;
+            padding: 10px 2rem;
+            width: 100%;
 
-          &:focus {
-            color: #fdb0bad8;
+            &:focus {
+              color: #fdb0bad8;
+            }
           }
         }
       }

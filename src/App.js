@@ -1,10 +1,18 @@
-import TodoApp from './components/TodoList';
+import React from "react";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
+import About from "./pages/About";
 
 function App() {
   return (
-    <div className="App">
-      <TodoApp />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" exact element={<Home/>} />
+        <Route  path="/about" exact element={<About/>} />
+        <Route path="*" element={<NotFound/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

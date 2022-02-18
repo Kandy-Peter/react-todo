@@ -8,6 +8,19 @@
 	list-style-type: none;
 }
 
-body {
-	
+input {
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		color: #f50057;
+		border-bottom: 2px solid #f50057;
+		transition: 0.6s all;
+	}
 }

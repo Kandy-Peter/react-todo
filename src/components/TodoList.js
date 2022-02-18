@@ -78,13 +78,15 @@ const TodoList = () => {
 
 		return (
 		  <div className="todolist">
-			<Form createTodo={createTodo} />
-			<Todolist 
-			  todos={state.todos}
-			  deleteTodo={deleteTodo}
-			  toggleTodoCompletion={toggleTodoCompletion}
-			  editTodo={editTodo}
-			/>
+			<div className="container">
+				<Form createTodo={createTodo} />
+				<Todolist 
+				todos={state.todos}
+				deleteTodo={deleteTodo}
+				toggleTodoCompletion={toggleTodoCompletion}
+				editTodo={editTodo}
+				/>
+			</div>
 		  </div>
 		);
 }
