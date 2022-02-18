@@ -1,5 +1,8 @@
 import React from 'react';
-import img from './delete.png';
+import img from '../images/delete.png';
+import Check from '../images/check.png';
+import Uncheck from '../images/unchecked.png';
+
 
 function Todo({id, todoText, completed, deleteTodo, toggleTodoCompletion, editTodo}) {
 
@@ -16,7 +19,13 @@ function Todo({id, todoText, completed, deleteTodo, toggleTodoCompletion, editTo
 	}
 
 	return (
-		<li>
+		<li className='todo-item'>
+		<div onClick={handleToggle}>
+		{completed ?
+			<img src = {Check} alt="not-checked" />:
+			<img src={Uncheck} alt="checked" />
+		 }
+		</div>
 		<form 
 			onSubmit={
 			e => {
@@ -30,32 +39,21 @@ function Todo({id, todoText, completed, deleteTodo, toggleTodoCompletion, editTo
 			className="todoText"
 			name="todoText"
 			value={todoText}
-			style={{
-				width: '220px', 
-				border: '0', 
-				outline: '0',
-				fontSize: '16px'
-			}}
 			onChange={handleEdit}
 			/>
 		</form>
-		<p onClick={handleToggle}>{completed ? `<img src="check.png" alt="checked" />` : '<img src="unchecked.png" alt="not-checked">'}</p>
 		<img onClick={handleDelete} src={img} alt="delete" />
 		</li>
 	);
 }
-	
+
 function Todolist({todos, deleteTodo, toggleTodoCompletion, editTodo}) {
 	return (
-		<ul
-		style={{
-			padding: '0'
-		}}  
-		>
+		<ul>
 		{todos.map(todo => (
 			<Todo 
-			key={todo.id} 
-			{...todo} 
+			key={todo.id}
+			{...todo}
 			deleteTodo={deleteTodo}
 			toggleTodoCompletion={toggleTodoCompletion}
 			editTodo={editTodo}

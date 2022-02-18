@@ -70,7 +70,7 @@ const TodoList = () => {
 				type="text"
 				className="inputText"
 				name="inputText"
-				placeholder="add todo"
+				placeholder="Add todo..."
 			/>
 			</form>
 		);
@@ -80,7 +80,7 @@ const TodoList = () => {
 		  <div className="todolist">
 			<Form createTodo={createTodo} />
 			<Todolist 
-			  todos={state.todos} 
+			  todos={state.todos}
 			  deleteTodo={deleteTodo}
 			  toggleTodoCompletion={toggleTodoCompletion}
 			  editTodo={editTodo}
