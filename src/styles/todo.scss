@@ -4,7 +4,7 @@
   background: url(../images/background.svg) no-repeat;
   background-position: right;
   background-size: contain;
-  
+
   .container {
     background-color: #e2e2e21a;
     box-shadow: 1px 2px 35px #eee;
@@ -19,7 +19,7 @@
     &::-webkit-scrollbar {
       visibility: hidden;
     }
-  
+
     img {
       width: 30px;
       height: 30px;
@@ -42,30 +42,30 @@
         color: #acacb3;
       }
     }
-      
-      .todo-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 70px;
-        border-bottom: 1px solid #6e6e77;
-        
-        form {
-          flex: 1;
 
-          .todoText {
-            font-size: 24px;
-            color: #2f2e41;
-            text-align: start;
-            padding: 10px 2rem;
-            width: 100%;
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 70px;
+      border-bottom: 1px solid #6e6e77;
 
-            &:focus {
-              color: #fdb0bad8;
-            }
+      form {
+        flex: 1;
+
+        .todoText {
+          font-size: 24px;
+          color: #2f2e41;
+          text-align: start;
+          padding: 10px 2rem;
+          width: 100%;
+
+          &:focus {
+            color: #fdb0bad8;
           }
         }
       }
+    }
   }
 }
