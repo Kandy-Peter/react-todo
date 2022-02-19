@@ -1,5 +1,6 @@
 .abt_container {
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 100%;
     background: url(../images/aboutbg.svg) no-repeat left;
     height: 100vh;
@@ -40,6 +41,29 @@
       line-height: 35px;
     }
 
+=======
+  width: 100%;
+  background: url(../images/aboutbg.svg) no-repeat bottom;
+  height: 100vh;
+
+  .about-me {
+    width: 70%;
+    height: 500px;
+    margin: 4rem auto;
+    padding: 3rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #e2e2e21a;
+    box-shadow: 1px 2px 35px #eee;
+    backdrop-filter: blur(5px);
+    color: #2f2e41;
+
+    p {
+      line-height: 35px;
+    }
+
+>>>>>>> 716273e
     h2 {
       width: 100%;
       text-align: center;

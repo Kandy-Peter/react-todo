@@ -12,18 +12,24 @@
     width: fit-content;
     padding: 3rem;
     border-radius: 15px;
-    min-height: 300px;
+    height: 500px;
     margin-top: 3rem;
+<<<<<<< HEAD
 <<<<<<< HEAD
     
 =======
+=======
+>>>>>>> 716273e
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
       visibility: hidden;
     }
 
+<<<<<<< HEAD
 >>>>>>> 716273e (fixe linters errors)
+=======
+>>>>>>> 716273e
     img {
       width: 30px;
       height: 30px;
@@ -39,6 +45,7 @@
       height: 65px;
       padding: 0 30px;
       border-bottom: 4px solid #2f2e41;
+      margin-bottom: 3rem;
 
       &::placeholder {
         font-size: 26px;
@@ -47,12 +54,15 @@
     }
 <<<<<<< HEAD
 
-    ul {
-      margin-top: 4rem;
-      width: 700px;
-      height: 300px;
-      overflow-y: scroll;
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 70px;
+      border-bottom: 1px solid #6e6e77;
 
+<<<<<<< HEAD
       &::-webkit-scrollbar {
         visibility: hidden;
       }
@@ -78,6 +88,8 @@
       height: 70px;
       border-bottom: 1px solid #6e6e77;
 
+=======
+>>>>>>> 716273e
       form {
         flex: 1;
 

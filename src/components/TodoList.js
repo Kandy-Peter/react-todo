@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Todolist from './todo';
+import PropTypes from 'prop-types';
+import img from '../images/delete.png';
+import Check from '../images/check.png';
+import Uncheck from '../images/unchecked.png';
 
 const TodoList = () => {
   const [state, setState] = useState({
-    nextId: 0,
     todos: [],
   });
 
@@ -21,13 +23,12 @@ const TodoList = () => {
 
   const createTodo = (newTodo) => {
     const todo = {
-      id: [state.nextId],
+      id: [state.todos.length],
       todoText: newTodo,
       completed: false,
     };
     const todos = [...state.todos, todo];
-    const nextId = state.nextId + 1;
-    setState({ todos, nextId });
+    setState({ todos });
   };
 
   const deleteTodo = (id) => {
@@ -37,7 +38,7 @@ const TodoList = () => {
     setState({ todos });
   };
 
-  const toggleTodoCompletion = (id) => {
+  const toggleTodo = (id) => {
     const todos = state.todos.map((todo) => (
       (todo.id === id) ? { ...todo, completed: !todo.completed } : todo
     ));
@@ -51,7 +52,7 @@ const TodoList = () => {
     setState({ todos });
   };
 
-  function Form(createTodo) {
+  function Form({ createTodo }) {
     function handleSubmit(e) {
       e.preventDefault();
       createTodo(e.target.inputText.value);
@@ -72,20 +73,39 @@ const TodoList = () => {
     );
   }
 
-  // Form.propTypes = {
-  //   createTodo: PropTypes.string.isRequired,
-  // };
+  Form.propTypes = {
+    createTodo: PropTypes.func.isRequired,
+  };
 
   return (
     <div className="todolist">
       <div className="container">
         <Form createTodo={createTodo} />
-        <Todolist
-          todos={state.todos}
-          deleteTodo={deleteTodo}
-          toggleTodoCompletion={toggleTodoCompletion}
-          editTodo={editTodo}
-        />
+        {state.todos.map((todo) => (
+          <li className="todo-item" key={todo.id}>
+            <button onClick={() => toggleTodo(todo.id)} type="button">
+              {todo.completed
+                ? <img src={Check} alt="not-checked" />
+                : <img src={Uncheck} alt="checked" />}
+            </button>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              e.target.todoText.blur();
+            }}
+            >
+              <input
+                type="text"
+                className="todoText"
+                name="todoText"
+                value={todo.todoText}
+                onChange={(e) => editTodo(todo.id, e.target.value)}
+              />
+            </form>
+            <button type="button" onClick={() => deleteTodo(todo.id)}>
+              <img src={img} alt="delete" />
+            </button>
+          </li>
+        ))}
       </div>
     </div>
   );
