@@ -5,7 +5,7 @@ the way that user can create a new task, can edit and save it again, user can ch
 or delete the tasks.
 
 ## see the project
-   here is the:  [live_Demo]()
+   here is the:  [live_Demo](https://nostalgic-clarke-f49792.netlify.app/)
 
 ## Built With
 
@@ -14,7 +14,7 @@ or delete the tasks.
 
 ### Prerequisites
 
-clone repo: `git clone https://github.com/Kandy-Peter/math-magicians.git`
+clone repo: `git clone https://github.com/Kandy-Peter/react-todo.git`
 
 ## Getting Started with Create React App
 
