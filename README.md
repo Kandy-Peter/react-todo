@@ -4,6 +4,10 @@ The TodoList is a simple web application that help users to manage their tasks,
 the way that user can create a new task, can edit and save it again, user can check it as completed
 or delete the tasks.
 
+## Screenshot
+
+![image](https://user-images.githubusercontent.com/80612925/155073709-94ad36b3-e3d8-4b9d-b024-5e37d437dd36.png)
+
 ## see the project
    here is the:  [live_Demo](https://nostalgic-clarke-f49792.netlify.app/)
 
